@@ -10,6 +10,7 @@ class ZhwLogin {
   final  EventChannel _eventChannel ;
   static ZhwLogin _instance;
   //如果有多个分发结果需要处理，可以定义多个StreamController，然后在客户端进行监听
+  //StreamController的类型 T 可以是任何类型，对象，map等都可以，接收的时候亦如此接收即可
   StreamController<String> _getStringStreamController =   StreamController.broadcast();
   //客户端监听 initState()方法中 ZhwLogin().getStringResp.listener((event) {})
   Stream<String> get getStringResp  =>  _getStringStreamController.stream;
